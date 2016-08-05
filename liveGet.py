@@ -41,3 +41,4 @@ if __name__ == '__main__':
         if(l!=p0):
             p0 = l
             print("%s\t%.2f" % (t, l))
+    #forever loop that displays updated price information
