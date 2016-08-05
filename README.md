@@ -1,2 +1,2 @@
-# .py
-(liveGet.py) -> terminal stock indicator using google finance api
+# .py files worth looking at
+(liveGet.py) -> stock data displayer using google finance api
