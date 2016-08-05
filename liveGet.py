@@ -1,4 +1,6 @@
-import urllib2  # works fine with Python 2.7.9 (not 3.4.+)
+#!/usr/bin/python
+#compile and execute with python2 
+import urllib2
 import json
 import time
 import sys
