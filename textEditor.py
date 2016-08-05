@@ -1,5 +1,7 @@
 #!/usr/bin/python
-#compile and execute with python2 ex) -> python lol.py Kamran hello.txt
+#works with python 2.7
+
+import sys 
 from sys import argv
 
 def fetchFile(filename):
@@ -13,15 +15,17 @@ def fetchFile(filename):
 		msg = raw_input("\nWhat would you like to enter in the file:\n -> ")
 		txt.write(msg)
 		txt.close()
+		fetchFile(filename)
 
 	elif d == 2:
 
 		txt = open(filename, 'r')
 		i = txt.read()
-		print "\nFile Content\n------------\n" + i + "\n"
+		print "\nFile Content\n------------\n" + i
 		txt.close()
+		fetchFile(filename)
 
-	else: exit()
+	else: sys.exit()
 
 def menu(repo, filename):
 
@@ -29,10 +33,10 @@ def menu(repo, filename):
 		fetchFile(filename)
 	elif repo == 'n' or repo == 'N':
 		print "\nExiting!"
-		exit()
+		sys.exit()
 	else:
 		print "\nError, restart Text editor!"
-		exit()
+		sys.exit()
 
 def init(script, user, filename, prompt):
 
@@ -46,14 +50,8 @@ def init(script, user, filename, prompt):
 
 if __name__ == '__main__':
 
-	script, user, filename = argv
+	script, user, filename = argv  #python textEditor.py David file.txt
 	prompt = ' -> '
 
 	init(script, user, filename, prompt)
-
-
-
-
-
-
 
