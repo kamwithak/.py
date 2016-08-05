@@ -1,13 +1,16 @@
 #!/usr/bin/python
-#compile and execute with python2 
+#works with python 2.7
+
 import urllib2
 import json
 import time
 import sys
 
 def fetchPreMarket(symbol, exchange):
+
     link = "http://finance.google.com/finance/info?client=ig&q="
     url = link+"%s:%s" % (exchange, symbol)
+
     try:
         u = urllib2.urlopen(url)
     except:
@@ -24,15 +27,17 @@ def fetchPreMarket(symbol, exchange):
 
     return (t,l)
 
-p0 = 0
-time.sleep(0.6)
+if __name__ == '__main__':
 
-symbol = raw_input("Enter the ticker symbol: ")
-exchange = raw_input("Enter the exchange: ")
+    p0 = 0
+    time.sleep(0.6)
+
+    symbol = raw_input("Enter the ticker symbol: ")
+    exchange = raw_input("Enter the exchange: ")
     #  symbol = "rbs"
     #  exchange = "lon" 
-while True:
-    t, l = fetchPreMarket(symbol,exchange)
-    if(l!=p0):
-        p0 = l
-        print("%s\t%.2f" % (t, l))
+    while True:
+        t, l = fetchPreMarket(symbol,exchange)
+        if(l!=p0):
+            p0 = l
+            print("%s\t%.2f" % (t, l))
