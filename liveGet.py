@@ -35,10 +35,9 @@ if __name__ == '__main__':
     symbol = raw_input("Enter the ticker symbol: ")
     exchange = raw_input("Enter the exchange: ")
     
-#forever loop that displays updated price information
+    #forever loop that displays updated price information
     while True:
         t, l = fetchPreMarket(symbol,exchange)
         if(l!=p0):
             p0 = l
             print("%s\t%.2f" % (t, l))
-            
