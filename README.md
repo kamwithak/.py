@@ -1,2 +1,2 @@
 #.py files worth looking at
-(liveGet.py) -> stock market data displayer using google finance api
+(liveGet.py) -> stock market price displayer using google finance api
