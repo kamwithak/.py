@@ -1,28 +1,36 @@
 #!/usr/bin/python
-#works with python 2.7
 
 import sys
 
-def search(array):
+def search(array, prompt):
 
-	print "Which element would you like to print within the list (0 - 5): ",
+	print "Which element (@ specific byte) would you like to print within the list (0 - 5) (-1 = EXIT):",
 	i = int(raw_input())
 
-	if i > 5 or i < 0:
+	if i == -1:
 		
-		sys.exit()
+		sys.exit(0)
 
-	selected_element = array[i]
-	print '\n', selected_element, '\n'
+	elif i > 5 or i < 0:
 
-	search(array)
+		print '\n', prompt, "ERROR - STAY WITHIN RANGE OF LIST", '\n'
+		search(array, prompt)                                                           
 
-if __name__ == '__main__':
+	else:
+
+		selected_element = array[i]
+		print '\n', prompt, selected_element, '\n'
+		search(array, prompt)
+
+if __name__ == "__main__":
 
 	i = 0
 	e = "Empty"
 	c = "Current"
+	prompt = ' -> '
 	array = [] #empty array
+
+	#build a mechanism that asks how many elements and make a while loop for that, using true and false prefered
 
 	while i < 6:
 
@@ -43,5 +51,5 @@ if __name__ == '__main__':
 
 	print "\nFinal list: ", array, "\n"
 
-	search(array)
+	search(array, prompt)
 
