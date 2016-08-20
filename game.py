@@ -49,13 +49,13 @@ while not game_exit: #event loop
 
 		print(event) #print events
 
-#instantaneously stop motion for a frame (hold down effect)
+# ~~ instantaneously stop motion for a frame (hold down effect)
 
-#		if event.type == pygame.KEYUP: 
-#			if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-#				lead_x_change = 0
-#			elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
-#				lead_y_change = 0
+# 		if event.type == pygame.KEYUP: 
+# 			if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+# 				lead_x_change = 0
+# 			elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+# 				lead_y_change = 0
 
 	if lead_x > 1000 or lead_x < 0 or lead_y > 800 or lead_y < 0: #boundaries 
 		game_exit = True
