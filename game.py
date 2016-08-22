@@ -8,6 +8,7 @@ pygame.init()
 white = (255,255,255)
 black = (0,0,0)
 navy_blue = (0,0,128)
+green = (0,155,0)
 red = (178,34,34)
 gray = (205,201,201)
 
@@ -21,11 +22,16 @@ clock = pygame.time.Clock()
 game_display = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("square_game")
 
-block_size = 25
+block_size = 20
 block_movement = 10
-FPS = 20
+FPS = 18
 
 font = pygame.font.SysFont(None,30)
+
+def snake(block_size, snake_list):
+
+	for XnY in snake_list:
+		pygame.draw.rect(game_display, green, [XnY[0], XnY[1], block_size, block_size]) #drawing snake
 
 def message_to_screen(msg, color):
 
@@ -43,11 +49,11 @@ def game_loop():
 	game_exit = False
 	game_over = False
 
-	number_generator_x = random.randint(20, display_width-block_size) #800 - 20
-	number_generator_y = random.randint(20, display_height-block_size)
+	snake_list = []
+	snake_length = 10
 
-	randAppleX = round(number_generator_x/10)*10 #aligning apple and snake using
-	randAppleY = round(number_generator_y/10)*10 #formula that rounds to nearest 10th (snake size is divisible by 10)
+	randAppleX = round(random.randint(20, display_width-block_size)/10)*10 #aligning apple and snake using
+	randAppleY = round(random.randint(20, display_height-block_size)/10)*10 #formula that rounds to nearest 10th (snake size is divisible by 10)
 
 	while not game_exit: #event loop
 
@@ -79,19 +85,19 @@ def game_loop():
 				if event.key == pygame.K_LEFT:
 					lead_x_change = -block_movement
 					lead_y_change = 0
-				elif event.key == pygame.K_RIGHT:
+				if event.key == pygame.K_RIGHT:
 					lead_x_change = block_movement
 					lead_y_change = 0
-				elif event.key == pygame.K_UP:
+				if event.key == pygame.K_UP:
 					lead_y_change = -block_movement
 					lead_x_change = 0
-				elif event.key == pygame.K_DOWN:
+				if event.key == pygame.K_DOWN:
 					lead_y_change = block_movement
 					lead_x_change = 0
 
-				elif event.key == pygame.K_r: #r to restart game
+				if event.key == pygame.K_r: #r to restart game
 					game_loop()
-				elif event.key == pygame.K_q: #q to exit game
+				if event.key == pygame.K_q: #q to exit game
 					pygame.quit()
 					sys.exit()
 
@@ -108,16 +114,27 @@ def game_loop():
 		if lead_x >= display_width or lead_x < 0 or lead_y >= display_height or lead_y < 0: #boundaries for game screen
 			game_over = True
 
-		if lead_x == randAppleX or lead_y == randAppleY:
-			print("yo yo yo")
+		if lead_x == randAppleX and lead_y == randAppleY:
+			randAppleX = round(random.randint(20, display_width-block_size)/10)*10 #formula that rounds to nearest 10th for grid effect
+			randAppleY = round(random.randint(20, display_height-block_size)/10)*10 #regenerates coordinates for new apple
 
 		#game_display.blit(bg, (0, 0))
 		lead_x += lead_x_change
 		lead_y += lead_y_change
 
 		game_display.fill(gray)
-		pygame.draw.rect(game_display, red, [randAppleX, randAppleY, block_size, block_size]) #apple
-		pygame.draw.rect(game_display, navy_blue, [lead_x, lead_y, block_size, block_size]) #snake
+		pygame.draw.rect(game_display, red, [randAppleX, randAppleY, block_size, block_size]) #drawing apple
+		
+		snake_head = []
+		snake_head.append(lead_x)
+		snake_head.append(lead_y)
+		snake_list.append(snake_head)
+
+		if len(snake_list) > snake_length:
+			del snake_list[0]
+
+		snake(block_size, snake_list)
+
 		pygame.display.update()
 
 		clock.tick(FPS) #fps
