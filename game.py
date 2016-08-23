@@ -6,7 +6,7 @@ import random
 pygame.init()
 
 white = (255,255,255)
-black = (0,0,0)
+black = (22,22,22)
 navy_blue = (0,0,128)
 green = (0,155,0)
 red = (178,34,34)
@@ -20,23 +20,29 @@ clock = pygame.time.Clock()
 #bg = pygame.image.load("wallpaper.jpg")
 #size = (width, height) = bg.get_size()
 game_display = pygame.display.set_mode((display_width, display_height))
-pygame.display.set_caption("square_game")
+pygame.display.set_caption("snake_game")
 
-block_size = 20
-block_movement = 10
-FPS = 18
+block_size = 15
+block_movement = 10 #keep block_movement = 10 for grid effect 
+FPS = 19
 
-font = pygame.font.SysFont(None,30)
+font_center = pygame.font.SysFont(None,30)
+font_for_counter = pygame.font.SysFont(None,40)
+
+def counter_displayer(counter):
+
+	counter_text = font_for_counter.render('SCORE: ' + str(counter), True, gray)
+	game_display.blit(counter_text, [20, 550])
 
 def snake(block_size, snake_list):
 
 	for XnY in snake_list:
 		pygame.draw.rect(game_display, green, [XnY[0], XnY[1], block_size, block_size]) #drawing snake
 
-def message_to_screen(msg, color):
+def message_to_center_of_screen(msg, color):
 
-	screen_text = font.render(msg, True, color)
-	game_display.blit(screen_text, [210, display_height/2]) #210 centers the text, play with this *
+	screen_text = font_center.render(msg, True, color)
+	game_display.blit(screen_text, [220, display_height/2]) #center the text, play with this *
 
 def game_loop():
 
@@ -45,22 +51,23 @@ def game_loop():
 
 	lead_x_change = 0
 	lead_y_change = 0
+	counter = 0
 
 	game_exit = False
 	game_over = False
 
 	snake_list = []
-	snake_length = 10
+	snake_length = 7
 
-	randAppleX = round(random.randint(20, display_width-block_size)/10)*10 #aligning apple and snake using
-	randAppleY = round(random.randint(20, display_height-block_size)/10)*10 #formula that rounds to nearest 10th (snake size is divisible by 10)
+	randAppleX = round(random.randint(60, 500)/10)*10 #formula that rounds to nearest 10th for grid effect
+	randAppleY = round(random.randint(60, 500)/10)*10 #generates random coordinate for initial apple 
 
 	while not game_exit: #event loop
 
 		while game_over == True:
 
-			game_display.fill(gray)
-			message_to_screen("You lose! Q to exit, or R to restart  :D", red)
+			game_display.fill(black)
+			message_to_center_of_screen("You lose! Q to exit, or R to restart  :D", red)
 			pygame.display.update()
 
 			for event in pygame.event.get():
@@ -115,22 +122,23 @@ def game_loop():
 			game_over = True
 
 		if lead_x == randAppleX and lead_y == randAppleY:
-			randAppleX = round(random.randint(20, display_width-block_size)/10)*10 #formula that rounds to nearest 10th for grid effect
-			randAppleY = round(random.randint(20, display_height-block_size)/10)*10 #regenerates coordinates for new apple
+			randAppleX = round(random.randint(60, 500)/10)*10 #formula that rounds to nearest 10th for grid effect
+			randAppleY = round(random.randint(60, 500)/10)*10 #also regenerates coordinates for new apple
+			counter += 1 
 
 		#game_display.blit(bg, (0, 0))
 		lead_x += lead_x_change
 		lead_y += lead_y_change
 
-		game_display.fill(gray)
+		game_display.fill(black)
+		counter_displayer(counter)
 		pygame.draw.rect(game_display, red, [randAppleX, randAppleY, block_size, block_size]) #drawing apple
-		
 		snake_head = []
 		snake_head.append(lead_x)
 		snake_head.append(lead_y)
 		snake_list.append(snake_head)
 
-		if len(snake_list) > snake_length:
+		if len(snake_list) > snake_length: #line-effect for snake, disable condition if confused
 			del snake_list[0]
 
 		snake(block_size, snake_list)
@@ -145,5 +153,4 @@ def game_loop():
 if __name__ == "__main__":
 
 	game_loop()
-
 
