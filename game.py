@@ -90,7 +90,7 @@ def game_loop():
 	game_success = False
 
 	snake_list = []
-	snake_length = 1 #init snake length
+	snake_length = 0 #init snake length, 0 still has a head for the snake
 
 	randAppleX = round(random.randint(60, 500))#/10)*10 #formula that rounds to nearest 10th for grid effect (currently commented)
 	randAppleY = round(random.randint(60, 500))#/10)*10 #generates random coordinate for initial apple 
