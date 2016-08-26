@@ -20,7 +20,7 @@ clock = pygame.time.Clock()
 
 game_display = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("snake_game")
-img = pygame.image.load("snake_head.jpg")
+#img = pygame.image.load("snake_head.png")
 
 block_size = 20 #used for snake size
 apple_thickness = 22 #used for apple size
@@ -90,7 +90,7 @@ def game_loop():
 	game_success = False
 
 	snake_list = []
-	snake_length = 0 #init snake length
+	snake_length = 1 #init snake length
 
 	randAppleX = round(random.randint(60, 500))#/10)*10 #formula that rounds to nearest 10th for grid effect (currently commented)
 	randAppleY = round(random.randint(60, 500))#/10)*10 #generates random coordinate for initial apple 
