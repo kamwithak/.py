@@ -201,6 +201,8 @@ def game_loop():
 		snake(block_size, snake_list)
 		ingame_counter_displayer(counter)
 
+		#highscore mechanism that writes into an external file, read that file, if file number < current score, game success = true.  - > Build this
+
 		if len(snake_list) > snake_length: #line-effect for snake, disable condition if confused
 			del snake_list[0]
 
