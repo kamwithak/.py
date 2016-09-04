@@ -32,14 +32,29 @@ small_font = pygame.font.SysFont("comicsansms", 25)
 medium_font = pygame.font.SysFont("comicsansms", 35)
 large_font = pygame.font.SysFont("comicsansms", 45)
 
-def ingame_counter_displayer(counter):
+def what_is_current_high_score():
 
-	ingame_counter_text = small_font.render('SCORE: ' + str(counter), True, white)
+	score_file = open("high_score.txt", 'r')
+	high_score = score_file.read()
+	score_file.close()
+	return int(high_score)
+
+def record_score(current_score, high_score):
+
+	if current_score > high_score: #only overwrites if current_score > high_score
+		score_file = open("high_score.txt", 'w')
+		score_file.truncate()
+		score_file.write(str(current_score))
+		score_file.close()
+
+def ingame_counter_displayer(current_score):
+
+	ingame_counter_text = small_font.render('SCORE: ' + str(current_score), True, white)
 	game_display.blit(ingame_counter_text, [20, 550])
 
-def final_counter_displayer(counter):
+def final_counter_displayer(current_score):
 
-	final_counter_text = small_font.render('FINAL SCORE: ' + str(counter), True, white)
+	final_counter_text = small_font.render('FINAL SCORE: ' + str(current_score), True, white)
 	game_display.blit(final_counter_text, [20, 550])
 
 def snake(block_size, snake_list):
@@ -83,7 +98,7 @@ def game_loop():
 
 	lead_x_change = -10
 	lead_y_change = 0
-	counter = 0
+	current_score = 0
 
 	game_exit = False
 	game_over = False
@@ -102,7 +117,7 @@ def game_loop():
 			game_display.fill(black)
 			message_to_center("Game over!", red, -60, "large")
 			message_to_center("Press Q to exit, or R to restart  :D", white, 0, "medium")
-			final_counter_displayer(counter)
+			final_counter_displayer(current_score)
 			pygame.display.update()
 
 			for event in pygame.event.get():
@@ -123,7 +138,7 @@ def game_loop():
 			game_display.fill(black)
 			message_to_center("Successfully Completed!", green, -63, "large")
 			message_to_center("Press Q to exit, or R to restart  :D", white, 0, "medium")
-			final_counter_displayer(counter)
+			final_counter_displayer(current_score)
 			pygame.display.update()
 
 			for event in pygame.event.get():
@@ -199,7 +214,7 @@ def game_loop():
 		game_display.fill(black)
 		pygame.draw.rect(game_display, red, [randAppleX, randAppleY, apple_thickness, apple_thickness]) #drawing apple
 		snake(block_size, snake_list)
-		ingame_counter_displayer(counter)
+		ingame_counter_displayer(current_score)
 
 		#highscore mechanism that writes into an external file, read that file, if file number < current score, game success = true.  - > Build this
 
@@ -214,10 +229,12 @@ def game_loop():
 			if lead_y > randAppleY and lead_y < randAppleY + apple_thickness or lead_y + block_size > randAppleY and lead_y + block_size < randAppleY + apple_thickness:
 		 		randAppleX = round(random.randint(60, 500))#/10)*10 #formula that rounds to nearest 10th for grid effect (currently commented)
 		 		randAppleY = round(random.randint(60, 500))#/10)*10 #regenerates coordinates for new apple
-		 		snake_length += 5 #increases snake length
-		 		counter += 1 #adjusts score
+		 		snake_length += 2 #increases snake length
+		 		current_score += 1 #adjusts score
+		 		high_score = what_is_current_high_score()
+		 		record_score(current_score, high_score)
 
-		if counter == 20:
+		if current_score == 100:
 			game_success = True
 
 		if lead_x >= display_width or lead_x < 0 or lead_y >= display_height or lead_y < 0: #boundaries for game screen
