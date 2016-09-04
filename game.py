@@ -25,24 +25,25 @@ pygame.display.set_caption("snake_game")
 block_size = 20 #used for snake size
 apple_thickness = 22 #used for apple size
 block_movement = 10 #snake movement
+high_score_file = "high_score.txt"
 FPS = 30 #frames per second
-#direction = "left" #initial direction for head of snake
+#direction = "left" // initial direction for head of snake
 
 small_font = pygame.font.SysFont("comicsansms", 25)
 medium_font = pygame.font.SysFont("comicsansms", 35)
 large_font = pygame.font.SysFont("comicsansms", 45)
 
-def what_is_current_high_score():
+def what_is_current_high_score(high_score_file):
 
-	score_file = open("high_score.txt", 'r')
+	score_file = open(high_score_file, 'r')
 	high_score = score_file.read()
 	score_file.close()
 	return int(high_score)
 
-def record_score(current_score, high_score):
+def record_score(current_score, high_score, high_score_file):
 
 	if current_score > high_score: #only overwrites if current_score > high_score
-		score_file = open("high_score.txt", 'w')
+		score_file = open(high_score_file, 'w')
 		score_file.truncate()
 		score_file.write(str(current_score))
 		score_file.close()
@@ -231,8 +232,8 @@ def game_loop():
 		 		randAppleY = round(random.randint(60, 500))#/10)*10 #regenerates coordinates for new apple
 		 		snake_length += 2 #increases snake length
 		 		current_score += 1 #adjusts score
-		 		high_score = what_is_current_high_score()
-		 		record_score(current_score, high_score)
+		 		high_score = what_is_current_high_score(high_score_file)
+		 		record_score(current_score, high_score, high_score_file)
 
 		if current_score == 100:
 			game_success = True
