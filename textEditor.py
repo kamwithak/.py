@@ -57,5 +57,6 @@ if __name__ == '__main__':
 
 	script, user, filename = argv  #python textEditor.py David file.txt
 	prompt = ' -> '
-
 	init(script, user, filename, prompt)
+	
+	
