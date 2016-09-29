@@ -25,7 +25,7 @@ pygame.display.set_caption("snake_game")
 block_size = 20 #used for snake size
 apple_thickness = 22 #used for apple size
 block_movement = 10 #snake movement
-high_score_file = "high_score.txt"
+high_score_file = "target_score.txt"
 FPS = 30 #frames per second
 #direction = "left" // initial direction for head of snake
 
@@ -48,10 +48,12 @@ def record_score(current_score, high_score, high_score_file):
 		score_file.write(str(current_score))
 		score_file.close()
 
-def ingame_counter_displayer(current_score):
+def game_counter_displayer(current_score, high_score):
 
-	ingame_counter_text = small_font.render('SCORE: ' + str(current_score), True, white)
-	game_display.blit(ingame_counter_text, [20, 550])
+	game_counter_text = small_font.render('SCORE: ' + str(current_score), True, white)
+	game_display.blit(game_counter_text, [20, 550])
+	game_counter_text = small_font.render('TARGET: ' + str(high_score), True, white)
+	game_display.blit(game_counter_text, [18, 10])
 
 def final_counter_displayer(current_score):
 
@@ -84,7 +86,7 @@ def text_objects(text, color, size):
 		text_surface = large_font.render(text, True, color)
 
 	return text_surface, text_surface.get_rect()
-	
+
 def message_to_center(msg, color, y_displace=0, size="small"):
 
 	text_surf, text_rect = text_objects(msg, color, size)
@@ -109,7 +111,7 @@ def game_loop():
 	snake_length = 0 #init snake length, 0 still has a head for the snake
 
 	randAppleX = round(random.randint(60, 500))#/10)*10 #formula that rounds to nearest 10th for grid effect (currently commented)
-	randAppleY = round(random.randint(60, 500))#/10)*10 #generates random coordinate for initial apple 
+	randAppleY = round(random.randint(60, 500))#/10)*10 #generates random coordinate for initial apple
 
 	while not game_exit: #event loop
 
@@ -188,20 +190,20 @@ def game_loop():
 
 	# ~~ (hold down effect)
 
-	# 		if event.type == pygame.KEYUP: 
+	# 		if event.type == pygame.KEYUP:
 	# 			if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
 	# 				lead_x_change = 0
 	# 			elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
 	# 				lead_y_change = 0
 
-		# ~~ snake and apple meet 
+		# ~~ snake and apple meet
 
 		# if lead_x >= randAppleX and lead_x <= randAppleX + apple_thickness:
 		# 	if lead_y >= randAppleY and lead_y <= randAppleY + apple_thickness:
 		# 		randAppleX = round(random.randint(60, 500))#/10)*10 #formula that rounds to nearest 10th for grid effect (currently commented)
 		# 		randAppleY = round(random.randint(60, 500))#/10)*10 #also regenerates coordinates for new apple
 		# 		snake_length += 1 #increase snake length
-		# 		counter += 1 #adjust score 
+		# 		counter += 1 #adjust score
 
 		#game_display.blit(bg, (0, 0))
 		lead_x += lead_x_change
@@ -215,13 +217,14 @@ def game_loop():
 		game_display.fill(black)
 		pygame.draw.rect(game_display, red, [randAppleX, randAppleY, apple_thickness, apple_thickness]) #drawing apple
 		snake(block_size, snake_list)
-		ingame_counter_displayer(current_score)
+		high_score = what_is_current_high_score(high_score_file)
+		game_counter_displayer(current_score, high_score)
 
 		#highscore mechanism that writes into an external file, read that file, if file number < current score, game success = true.  - > Build this
 
 		if len(snake_list) > snake_length: #line-effect for snake, disable condition if confused
 			del snake_list[0]
-
+			       
 		for each_segment in snake_list[:-1]: #head of snake meets body of snake = game over
 			if each_segment == snake_head:
 				game_over = True
@@ -232,10 +235,10 @@ def game_loop():
 		 		randAppleY = round(random.randint(60, 500))#/10)*10 #regenerates coordinates for new apple
 		 		snake_length += 2 #increases snake length
 		 		current_score += 1 #adjusts score
-		 		high_score = what_is_current_high_score(high_score_file)
 		 		record_score(current_score, high_score, high_score_file)
+		 		high_score = what_is_current_high_score(high_score_file)
 
-		if current_score == 100:
+		if current_score == high_score:
 			game_success = True
 
 		if lead_x >= display_width or lead_x < 0 or lead_y >= display_height or lead_y < 0: #boundaries for game screen
@@ -244,10 +247,11 @@ def game_loop():
 		clock.tick(FPS) #fps
 		pygame.display.update()
 
-
 	pygame.quit()
 	sys.exit()
 
 if __name__ == "__main__":
-	game_loop()
 
+	game_loop()
+	
+	
