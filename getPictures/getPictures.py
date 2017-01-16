@@ -7,7 +7,7 @@ import urllib2
 ####
 
 #This list is used to search keywords.
-#You can edit this list to search for google images of your choice. 
+#You can edit this list to search for google images of your choice. (keep to one element for simplicity)
 search_keyword = ['pretty girls']
 
 #This list is used to further add suffix to your search term.
@@ -73,8 +73,8 @@ def _images_get_all_items(page):
     return items
 
 ############## Main Program ############
-t0 = time.time()   #start the timer
-
+#start the timer
+t0 = time.time()
 #Download Image Links
 i= 0
 while i<len(search_keyword):
