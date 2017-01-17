@@ -8,7 +8,7 @@ import urllib2
 
 #This list is used to search keywords.
 #You can edit this list to search for google images of your choice. (keep to one element for simplicity)
-search_keyword = ['pretty girls']
+search_keyword = ['tesla']
 
 #This list is used to further add suffix to your search term.
 #Each element of the list will help you download 100 images. 
@@ -32,7 +32,7 @@ def download_page(url):
             respData = str(resp.read())
             return respData
         except Exception as e:
-            print(str(e))
+            print str(e)
     else:                          #If the Current Version of Python is 2.x
         import urllib2
         try:
@@ -43,7 +43,7 @@ def download_page(url):
             page = response.read()
             return page
         except:
-            return"Page Not found"
+            return "Page Not found"
 
 #Finding 'Next Image' from the given raw page
 def _images_get_next_item(s):
@@ -72,6 +72,7 @@ def _images_get_all_items(page):
             page = page[end_content:]
     return items
 
+
 ############## Main Program ############
 #start the timer
 t0 = time.time()
@@ -79,9 +80,9 @@ t0 = time.time()
 i= 0
 while i<len(search_keyword):
     items = []
-    iteration = "Item no.: " + str(i+1) + " -->" + " Item name = " + str(search_keyword[i])
-    print (iteration)
-    print ("Evaluating...")
+    iteration = "Item #: " + str(i+1) + " -->" + " Item name = " + str(search_keyword[i])
+    print iteration
+    print "Evaluating..."
     search_keywords = search_keyword[i]
     search = search_keywords.replace(' ','%20')
     j = 0
@@ -92,9 +93,9 @@ while i<len(search_keyword):
         time.sleep(0.1)
         items = items + (_images_get_all_items(raw_html))
         j = j + 1
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     #print ("Image Links = "+str(items))
-    print ("Total Image Links = "+str(len(items)))
+    print "Total Image Links = " + str(len(items))
     i = i+1
 
     #This allows you to write all the links into a test file. 
@@ -106,9 +107,9 @@ while i<len(search_keyword):
 
 t1 = time.time()     #stop the timer
 total_time = t1-t0   #Calculating the total time required to crawl.
-print("Total time taken: "+str(total_time)+" Seconds")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print ("Starting Download...")
+print "Total time taken: "+str(total_time)+" Seconds"
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print "Starting Download..."
 
 #To save imges to the pictures directory
 k=0
@@ -123,19 +124,19 @@ while(k<len(items)):
         data = response.read()
         output_file.write(data)
         response.close();
-        print("completed ====> "+str(k+1))
+        print "completed ====> "+str(k+1)
         k=k+1;
     except IOError:   #If there is any IOError
         errorCount+=1
-        print("IOError on image "+str(k+1))
+        print "IOError on image "+str(k+1)
         k=k+1;
     except HTTPError as e:  #If there is any HTTPError
         errorCount+=1
-        print("HTTPError"+str(k))
+        print "HTTPError"+str(k)
         k=k+1;
     except URLError as e:
         errorCount+=1
-        print("URLError "+str(k))
+        print "URLError "+str(k)
         k=k+1;
 
 print "~~~~~~~~~~~~~~~~~~~~"
