@@ -1,4 +1,4 @@
-#Searching and Downloading Google Images/Image Links
+#Python script that downloads both images and image links based on a search query
 
 import time
 import sys
