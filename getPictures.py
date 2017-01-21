@@ -9,7 +9,7 @@ import os
 
 #This list is used to search keywords.
 #You can edit this list to search for google images of your choice. (keep to one element for simplicity)
-search_keyword = ['tesla']
+search_keyword = ['breaded cats']
 
 #This list is used to further add suffix to your search term.
 #Each element of the list will help you download 100 images. 
@@ -73,77 +73,82 @@ def _images_get_all_items(page):
             page = page[end_content:]
     return items
 
-
 ############## Main Program ############
-#start the timer
-t0 = time.time()
-#Download Image Links
-i= 0
+if __name__ == '__main__':
 
-if not os.path.exists('pictures/'):
-    os.makedirs('pictures/')
+    t0 = time.time()
+    i= 0
 
-while i<len(search_keyword):
-    items = []
-    iteration = "Item #: " + str(i+1) + " -->" + " Item name = " + str(search_keyword[i])
-    print iteration
-    print "Evaluating..."
-    search_keywords = search_keyword[i]
-    search = search_keywords.replace(' ','%20')
-    j = 0
-    while j<len(keywords):
-        pure_keyword = keywords[j].replace(' ','%20')
-        url = 'https://www.google.com/search?q=' + search + pure_keyword + '&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg'
-        raw_html =  (download_page(url))
-        time.sleep(0.1)
-        items = items + (_images_get_all_items(raw_html))
-        j = j + 1
+    if not os.path.exists('pictures/'):
+        os.makedirs('pictures/')
+
+    while i<len(search_keyword):
+
+        items = []
+        iteration = "Item #: " + str(i+1) + " -->" + " Item name = " + str(search_keyword[i])
+        print iteration
+        print "Evaluating..."
+        search_keywords = search_keyword[i]
+        search = search_keywords.replace(' ','%20')
+        j = 0
+
+        while j<len(keywords):
+
+            pure_keyword = keywords[j].replace(' ','%20')
+            url = 'https://www.google.com/search?q=' + search + pure_keyword + '&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg'
+            raw_html =  (download_page(url))
+            time.sleep(0.1)
+            items = items + (_images_get_all_items(raw_html))
+            j = j + 1
+
+        print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        #print ("Image Links = "+str(items))
+        print "Total Image Links = " + str(len(items))
+        i = i+1
+
+        #This allows you to write all the links into a test file. 
+        #This text file will be created in the same directory as your code. 
+        #You can comment out the below 3 lines to stop writing the output to the text file.
+        info = open('output.txt', 'a')
+        info.write(str(i) + ': ' + str(search_keyword[i-1]) + ": " + str(items) + "\n\n\n")
+        info.close()
+
+    t1 = time.time()     #stop the timer
+    total_time = t1-t0   #Calculating the total time required to crawl.
+    print "Total time taken: "+str(total_time)+" Seconds"
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    #print ("Image Links = "+str(items))
-    print "Total Image Links = " + str(len(items))
-    i = i+1
+    print "Starting Download..."
 
-    #This allows you to write all the links into a test file. 
-    #This text file will be created in the same directory as your code. 
-    #You can comment out the below 3 lines to stop writing the output to the text file.
-    info = open('output.txt', 'a')
-    info.write(str(i) + ': ' + str(search_keyword[i-1]) + ": " + str(items) + "\n\n\n")
-    info.close()
+    #To save images to the pictures directory
+    k=0
+    errorCount=0
+    
+    while(k<len(items)):
 
-t1 = time.time()     #stop the timer
-total_time = t1-t0   #Calculating the total time required to crawl.
-print "Total time taken: "+str(total_time)+" Seconds"
-print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-print "Starting Download..."
+        from urllib2 import Request,urlopen
+        from urllib2 import URLError, HTTPError
+        try:
+            req = Request(items[k], headers={"User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
+            response = urlopen(req)
+            output_file = open("pictures/"+str(k+1)+".jpg",'wb')
+            data = response.read()
+            output_file.write(data)
+            response.close();
+            print "completed ====> "+str(k+1)
+            k=k+1;
+        except IOError:   #If there is any IOError
+            errorCount+=1
+            print "IOError on image "+str(k+1)
+            k=k+1;
+        except HTTPError as e:  #If there is any HTTPError
+            errorCount+=1
+            print "HTTPError"+str(k)
+            k=k+1;
+        except URLError as e:
+            errorCount+=1
+            print "URLError "+str(k)
+            k=k+1;
 
-#To save imges to the pictures directory
-k=0
-errorCount=0
-while(k<len(items)):
-    from urllib2 import Request,urlopen
-    from urllib2 import URLError, HTTPError
-    try:
-        req = Request(items[k], headers={"User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
-        response = urlopen(req)
-        output_file = open("pictures/"+str(k+1)+".jpg",'wb')
-        data = response.read()
-        output_file.write(data)
-        response.close();
-        print "completed ====> "+str(k+1)
-        k=k+1;
-    except IOError:   #If there is any IOError
-        errorCount+=1
-        print "IOError on image "+str(k+1)
-        k=k+1;
-    except HTTPError as e:  #If there is any HTTPError
-        errorCount+=1
-        print "HTTPError"+str(k)
-        k=k+1;
-    except URLError as e:
-        errorCount+=1
-        print "URLError "+str(k)
-        k=k+1;
-
-print "~~~~~~~~~~~~~~~~~~~~"
-print(str(errorCount)+" ----> total errors")
-print "~~~~~~~~~~~~~~~~~~~~"
+    print "~~~~~~~~~~~~~~~~~~~~"
+    print(str(errorCount)+" ----> total errors")
+    print "~~~~~~~~~~~~~~~~~~~~"
