@@ -81,7 +81,7 @@ if __name__ == '__main__':
     if not os.path.exists('pictures/'):
         os.makedirs('pictures/')
 
-    while i<len(search_keyword):
+    while i < len(search_keyword):
 
         items = []
         iteration = "Item #: " + str(i+1) + " -->" + " Item name = " + str(search_keyword[i])
