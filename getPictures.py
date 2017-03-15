@@ -6,7 +6,7 @@ import sys
 import urllib2
 import os
 
-####
+####~~~~~~~
 
 #This list is used to search keywords.
 #You can edit this list to search for google images of your choice. (keep to one element for simplicity)
@@ -15,17 +15,16 @@ search_keyword = ['breaded cats']
 #This list is used to further add suffix to your search term.
 #Each element of the list will help you download 100 images. 
 #First element is blank which denotes that no suffix is added to the search keyword of the above list. 
-#If the first element of the search_keyword is 'Australia' and the second element of keywords is 'high resolution', then it will search for 'Australia High Resolution'
 keywords = ['high resolution']
 
-####
+####~~~~~~~~
 
-#Downloading entire Web Document
+#Downloading Web Document
 def download_page(url):
     version = (3,0)
     cur_version = sys.version_info
     if cur_version >= version:     #If the Current Version of Python is 3.0 or above
-        import urllib.request      #urllib library for Extracting web pages
+        import urllib.request
         try:
             headers = {}
             headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
@@ -70,7 +69,7 @@ def _images_get_all_items(page):
             break
         else:
             items.append(item)       #Append all the links in the list named 'Links'
-            time.sleep(0.1)          #Timer could be used to slow down the request for image downloads
+            time.sleep(0.1)
             page = page[end_content:]
     return items
 
@@ -106,9 +105,8 @@ if __name__ == '__main__':
         #print ("Image Links = "+str(items))
         print "Total Image Links = " + str(len(items))
         i = i+1
-
-        #This allows you to write all the links into a test file. 
-        #This text file will be created in the same directory as your code. 
+        
+        #This text file will be created in the same directory as your code...
         #You can comment out the below 3 lines to stop writing the output to the text file.
         info = open('output.txt', 'a')
         info.write(str(i) + ': ' + str(search_keyword[i-1]) + ": " + str(items) + "\n\n\n")
