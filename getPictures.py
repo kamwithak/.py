@@ -12,9 +12,8 @@ import os
 #You can edit this list to search for google images of your choice. (keep to one element for simplicity)
 search_keyword = ['breaded cats']
 
-#This list is used to further add suffix to your search term.
+#This list is used to further add suffix to your search term -> addition to search_keyword.
 #Each element of the list will help you download 100 images. 
-#First element is blank which denotes that no suffix is added to the search keyword of the above list. 
 keywords = ['high resolution']
 
 ####~~~~~~~~
