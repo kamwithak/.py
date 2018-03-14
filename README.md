@@ -1,4 +1,4 @@
-# .py files worth keeping
+# Notable python projects:
 
 (app.py) -> backend for encrypted user registration system and database management using MySQL & Bootstrap
 
