@@ -1,6 +1,6 @@
 # Notable python projects:
 
-(app.py) -> backend for encrypted user registration system and database management using MySQL & Bootstrap
+(app.py) -> flask-based backend for encrypted user-registration/database system using MySQL & Bootstrap
 
 (liveGet.py) -> stock market price displayer using google finance api
 
