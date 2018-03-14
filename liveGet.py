@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#works with python 2.7
+# works with python 2.7
 
 import urllib2
 import json
