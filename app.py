@@ -233,5 +233,5 @@ def delete_article(id):
 
 # program starts here
 if __name__ == '__main__':
-	app.secret_key='1k34n24k324k'
+	app.secret_key='**************'
 	app.run(debug=True)
