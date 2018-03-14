@@ -27,7 +27,7 @@ apple_thickness = 22 #used for apple size
 block_movement = 10 #snake movement
 high_score_file = "target_score.txt"
 FPS = 30 #frames per second
-#direction = "left" // initial direction for head of snake
+#direction = "left" // initial direction for head of snake.
 
 small_font = pygame.font.SysFont("comicsansms", 25)
 medium_font = pygame.font.SysFont("comicsansms", 35)
