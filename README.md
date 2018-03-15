@@ -9,10 +9,14 @@
 
 ![0](https://i.imgur.com/82h5D4c.jpg)
 
-(star_test.py) -> simulation of spacetime (stars and nightsky)
-
 (game.py) -> snake and apple game using pygame module
 
+![0](https://i.imgur.com/D5cVBdA.png)
+
 (cube.py) -> visual rotating cube constructed with open.gl
+
+![0](https://i.imgur.com/TT9ZWU5.png)
+
+(star_test.py) -> simulation of spacetime (stars and nightsky)
 
 (liveGet.py) -> stock market price displayer using google finance api
