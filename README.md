@@ -1,5 +1,10 @@
 # Notable python projects:
 
+# proprietary data analytics application written for GO-Transit (software for enterprise)
+
+![0](https://i.imgur.com/RKYvanv.png)
+![1](https://i.imgur.com/RQsGPlC.png)
+
 (app.py) -> flask-based backend for a user-registration/database system using MySQL & Bootstrap
 
 ![0](https://i.imgur.com/8o5FVs7.png)
