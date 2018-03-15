@@ -12,6 +12,7 @@
 (game.py) -> snake and apple game using pygame module
 
 ![0](https://i.imgur.com/D5cVBdA.png)
+![1](https://i.imgur.com/gGZ9oHP.png)
 
 (cube.py) -> visual rotating cube constructed with open.gl
 
