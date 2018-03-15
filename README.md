@@ -13,6 +13,6 @@
 
 (game.py) -> snake and apple game using pygame module
 
-(cube.py) -> cube constructed with open.gl
+(cube.py) -> visual rotating cube constructed with open.gl
 
 (liveGet.py) -> stock market price displayer using google finance api
