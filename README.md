@@ -30,4 +30,4 @@ Visual rotating cube constructed with OpenGl (cube.py):
 (star_test.py) -> Simulation of spacetime (stars and nightsky)
 
 
-(liveGet.py) -> Stock market price displayer using google finance api
+(liveGet.py) -> Stock market price-displayer using Google Finance API
