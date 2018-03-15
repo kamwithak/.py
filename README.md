@@ -2,7 +2,7 @@
 
 (app.py) -> flask-based backend for a user-registration/database system using MySQL & Bootstrap
 
-![Database system/User-registration](https://i.imgur.com/8o5FVs7.png)
+![Database system/User-registration](https://i.imgur.com/8o5FVs7.png)(https://i.imgur.com/Mth4Pg6.png)
 
 (liveGet.py) -> stock market price displayer using google finance api
 
