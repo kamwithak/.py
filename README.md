@@ -2,6 +2,8 @@
 
 (app.py) -> flask-based backend for a user-registration/database system using MySQL & Bootstrap
 
+![Database system/User-registration](https://i.imgur.com/8o5FVs7.png)
+
 (liveGet.py) -> stock market price displayer using google finance api
 
 (getPictures.py) -> script that downloads both images and image links based on search query
