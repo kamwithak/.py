@@ -15,10 +15,8 @@
 
 (cube.py) -> visual rotating cube constructed with open.gl
 
-![0](https://i.imgur.com/TT9ZWU5.png)
+![0](https://i.imgur.com/7GVD7i9.png)
 
 (star_test.py) -> simulation of spacetime (stars and nightsky)
-
-![0](https://i.imgur.com/4yzhXxs.png)
 
 (liveGet.py) -> stock market price displayer using google finance api
