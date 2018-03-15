@@ -1,15 +1,5 @@
 #!/usr/bin/env python
 
-"""starfield, by Jon Parise (jon at csh.rit.edu)
-
-Simple program to display a moving parallax starfield.
-
-The speed of the starfield can be altered using the up and down arrows.
-The direction of the starfield can be changed using the left and right arrows.
-
-The algorythm is based on code by Sean Bugel (bugelsea at rcn.com).
-"""
-
 import random
 import pygame
 from pygame.locals import *
