@@ -1,6 +1,6 @@
 # Notable python projects:
 
-# proprietary data analytics application written for GO-Transit (software for enterprise)
+proprietary data analytics application written for GO-Transit (software for enterprise)
 
 ![0](https://i.imgur.com/RKYvanv.png)
 ![1](https://i.imgur.com/RQsGPlC.png)
