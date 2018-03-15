@@ -6,7 +6,7 @@ Flask-based backend for a user-registration/database system using MySQL & Bootst
 ![1](https://i.imgur.com/Mth4Pg6.png)
 
 
-Proprietary data-analytics application written for GO-Transit (RailVision Analytics):
+Proprietary data-analytics application developed for GO-Transit (RailVision Analytics):
 
 ![0](https://i.imgur.com/GXxsIQw.png)
 
