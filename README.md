@@ -19,4 +19,6 @@
 
 (star_test.py) -> simulation of spacetime (stars and nightsky)
 
+![0](https://i.imgur.com/TT9ZWU5.png)
+
 (liveGet.py) -> stock market price displayer using google finance api
