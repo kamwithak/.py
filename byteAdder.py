@@ -5,7 +5,12 @@ def _or_(i, j):
 def _not_(i):
 	return (not i)
 def _xor_(i, j):
-	return _or_(_and_(i,_not_(j)),_and_(_not_(i),j))
+	return (_or_(_and_(i,_not_(j)),_and_(_not_(i),j)))
+def _if_(i, j):
+	return (_or_(_not_(i), j))
+def _iff_(i, j):
+	return (_and_(_or_(_not_(i), j),_or_(i, _not_(j))))
+
 def WhatIsTheNameOfMyComputer():
 	return None
 
