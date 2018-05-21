@@ -15,7 +15,7 @@ LEFT = 0
 RIGHT = 1
 screen = pygame.display.set_mode(SCREEN_SIZE, HWSURFACE|DOUBLEBUF|FULLSCREEN)
 # Set the background to black.
-screen.fill(BLACK)
+screen.fill(BLACK) 
 
 def initStars(screen):
     "Create the starfield"
