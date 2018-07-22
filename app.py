@@ -1,4 +1,5 @@
-# Flask-based backend for an encrypted (SHA256) user-registration/database platform that manages project repositories:
+# Flask-based backend for an encrypted (SHA256) user-registration/database platform that manages project repositories
+# Project repositories are managed using MySQL
 # Developed by Kamran Choudhry
 
 from flask import Flask, session, render_template, flash, redirect, url_for, session, logging, request
