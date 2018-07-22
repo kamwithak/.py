@@ -1,3 +1,6 @@
+# Flask-based backend for an encrypted (SHA256) user-registration/database platform that manages project repositories:
+# Developed by Kamran Choudhry
+
 from flask import Flask, session, render_template, flash, redirect, url_for, session, logging, request
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
