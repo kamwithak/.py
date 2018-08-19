@@ -1,5 +1,5 @@
-# Notable Python Snippets:
-## unfinished ##
+# public snippets: #
+## ask me about some of my private stuff ##
 
 (star_test.py) -> Simulation of spacetime (stars and nightsky)
 (liveGet.py) -> Stock market minute-data feed using Google Finance API
