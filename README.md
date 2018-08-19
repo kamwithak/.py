@@ -1,4 +1,4 @@
-# public snippets: #
+# ☆ python snippets ☆ #
 
 (star_test.py) -> Simulation of spacetime (stars and nightsky)
 
@@ -23,4 +23,4 @@ Visual rotating cube constructed with OpenGl (cube.py):
 ![0](https://i.imgur.com/7GVD7i9.png)
 
 
-# ☆ REPOSITORY IS OPEN SOURCE ☆ #
+# ☆ kamwithak.github.io ☆ #
