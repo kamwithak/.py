@@ -23,6 +23,4 @@ Visual rotating cube constructed with OpenGl (cube.py):
 ![0](https://i.imgur.com/7GVD7i9.png)
 
 
-# ^ ABOVE PROJECTS ARE OPEN SOURCE ^ #
-
-
+# ☆ REPOSITORY IS OPEN SOURCE ☆ #
