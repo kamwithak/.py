@@ -1,6 +1,7 @@
 # public snippets: #
 
 (star_test.py) -> Simulation of spacetime (stars and nightsky)
+
 (liveGet.py) -> Stock market minute-data feed using Google Finance API
 
 Flask-based backend for a user-registration/database system using MySQL & Bootstrap (app.py):
@@ -22,4 +23,6 @@ Visual rotating cube constructed with OpenGl (cube.py):
 ![0](https://i.imgur.com/7GVD7i9.png)
 
 
-OPEN SOURCE STUFF
+# ^ OPEN SOURCE STUFF ^ #
+
+
