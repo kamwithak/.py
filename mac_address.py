@@ -1,9 +1,6 @@
-# Q2:
 import random
-LIMIT = 12
-REMAINING_BITS = LIMIT - 4
-MAX_ADDRESS  = 8
-char = ['A','B','C','D','E','F','G',0,1,2,3,4,5,6,7,8,9]
+LIMIT = 12 ; REMAINING_BITS = LIMIT - 4 ; MAX_ADDRESS  = 3
+char = ['A','B','C','D','E','F','G',0,1,2,3,4,5,6,7,8,9] ; _dict = {}
 
 class Domain(object):
     def __init__(self, _id, name, mac_address):
@@ -67,9 +64,7 @@ if __name__ == '__main__':
                         Domain('8GDF','Sam',[]),
                         Domain('3HG2','Yam',[]),
                         Domain('8K7G','Bam',[]),
-                        Domain('KG3H','Tam',[])     ] )
-
-
-
+                        Domain('KG3H','Qam',[]),
+                        Domain('0GJ4','Tam',[])     ] )
 
 
