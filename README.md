@@ -6,9 +6,6 @@
 
 (imagePreProcessing.py) -> OpenCV facial recognition application using ready-trained face/eye cascade classifiers:
 
-![0](https://i.imgur.com/ad8fYZN.gifv)
-![1](https://i.imgur.com/3Dm2h2M.gifv)
-
 Flask-based backend for a user-registration/database system using MySQL & Bootstrap (app.py):
 
 ![0](https://i.imgur.com/8o5FVs7.png)
