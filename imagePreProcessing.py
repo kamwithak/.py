@@ -1,4 +1,4 @@
-# facial recognition screenshotter application using face/eye cascade classifiers 
+# facial recognition webcam-screenshotter using face/eye cascade classifiers 
 # opencv and python3 
 # developed by Kamran Choudhry
 
