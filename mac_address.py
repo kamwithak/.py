@@ -67,7 +67,7 @@ if __name__ == '__main__':
                         Domain('8GDF','Sam',[]),
                         Domain('3HG2','Yam',[]),
                         Domain('8K7G','Bam',[]),
-                        Domain('KG3H','Sam',[])     ] )
+                        Domain('KG3H','Tam',[])     ] )
 
 
 
