@@ -4,6 +4,11 @@
 
 (liveGet.py) -> Stock market minute-data feed using Google Finance API
 
+OpenCV facial recognition application using face/eye cascade classifiers (imagePreProcessing.py):
+
+![0](https://i.imgur.com/ad8fYZN.gifv)
+![1](https://i.imgur.com/3Dm2h2M.gifv)
+
 Flask-based backend for a user-registration/database system using MySQL & Bootstrap (app.py):
 
 ![0](https://i.imgur.com/8o5FVs7.png)
