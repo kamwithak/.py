@@ -4,7 +4,7 @@
 
 (liveGet.py) -> Stock market minute-data feed using Google Finance API
 
-OpenCV facial recognition application using face/eye cascade classifiers (imagePreProcessing.py):
+(imagePreProcessing.py) -> OpenCV facial recognition application using ready-trained face/eye cascade classifiers:
 
 ![0](https://i.imgur.com/ad8fYZN.gifv)
 ![1](https://i.imgur.com/3Dm2h2M.gifv)
