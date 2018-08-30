@@ -66,4 +66,4 @@ if __name__ == '__main__':
 	print byte2, "-> Y"
 	print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ +"
 	print arr, "-> X + Y"
-	print "Carry Overflow: ", int(carry)
+	print "Carry Overflow: ", int(carry) #geeze
