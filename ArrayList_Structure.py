@@ -17,7 +17,7 @@ class ArrayList:
 	# is the array empty or not?
 	def isArrayEmpty(self):
 		if self.arr:
-			print('array is populate')
+			print('array is populated')
 		else:
 			print('array is empty')
 
