@@ -1,11 +1,5 @@
 # ☆ python snippets ☆ #
 
-(ArrayList_Structure.py) -> ArrayList class using 'list' as underlying data structure
-
-(star_test.py) -> Simulation of spacetime (stars and nightsky)
-
-(liveGet.py) -> Stock market minute-data feed using Google Finance API
-
 OpenCV facial recognition using ready-trained face/eye cascade classifiers (imagePreProcessing.py):
 
 ![0](https://i.imgur.com/5tjMmzg.jpg)
@@ -27,6 +21,11 @@ Snake and apple game using PyGame (game.py):
 Visual rotating cube constructed with OpenGL (cube.py):
 
 ![0](https://i.imgur.com/7GVD7i9.png)
+
+
+(ArrayList_Structure.py) -> ArrayList class using 'list' as underlying data structure
+(star_test.py) -> Simulation of spacetime (stars and nightsky)
+(liveGet.py) -> Stock market minute-data feed using Google Finance API
 
 
 # ☆ kamwithak.github.io ☆ #
