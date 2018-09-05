@@ -1,3 +1,7 @@
+# ArrayList Data Structure (OOP)
+# Python3
+# Developed by Kamran Choudhry
+
 class ArrayList:
 	def __init__(self, arr):
 		self.arr = arr
