@@ -1,5 +1,7 @@
 # ☆ python snippets ☆ #
 
+(ArrayList_Structure.py) -> ArrayList class using 'list' as underlying data structure
+
 (star_test.py) -> Simulation of spacetime (stars and nightsky)
 
 (liveGet.py) -> Stock market minute-data feed using Google Finance API
