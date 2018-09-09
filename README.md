@@ -1,13 +1,13 @@
 # ☆ python snippets ☆ #
 
-OpenCV facial recognition using ready-trained face/eye cascade classifiers (imagePreProcessing.py):
-
-![0](https://i.imgur.com/5tjMmzg.jpg)
-
 Flask-based backend for a user-registration/database system using MySQL & Bootstrap (app.py):
 
 ![0](https://i.imgur.com/8o5FVs7.png)
 ![1](https://i.imgur.com/Mth4Pg6.png)
+
+OpenCV facial recognition using ready-trained face/eye cascade classifiers (imagePreProcessing.py):
+
+![0](https://i.imgur.com/5tjMmzg.jpg)
 
 Internet crawler that downloads images and image URL's based on query (getPictures.py):
 
