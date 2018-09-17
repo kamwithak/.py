@@ -1,5 +1,5 @@
-# python backend script that downloads both images and image links based on multiple search queries
-# compilable with python 2.7
+# backend script that downloads 'images' and 'image links' based on multiple search queries
+# compiles with python 2.7
 
 import time
 import sys
