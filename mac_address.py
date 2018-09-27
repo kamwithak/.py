@@ -60,6 +60,7 @@ class MAC_Generator(Domain):
 if __name__ == '__main__':
 
     # MAC_Generator takes one argument ; a list of unique Domain objects
+    
     MAC_Generator( [    Domain('F52D','Kam',[]),
                         Domain('8GDF','Sam',[]),
                         Domain('3HG2','Yam',[]),
