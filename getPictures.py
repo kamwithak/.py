@@ -1,7 +1,7 @@
 #Backend script that downloads 'images' and 'image links' using Google Images
 #Full stack application available upon request
 # ~~
-#Compiles with python 2.7 and the std libraries
+#Compiles with Py 2.7 (standard)
 #Developer: Kamran Choudhry
 
 import time
