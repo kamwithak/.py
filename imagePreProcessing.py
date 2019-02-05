@@ -1,5 +1,7 @@
 # Facial recognition webcam-capturing application using face/eye cascade classifiers 
 # OpenCV and Python3 
+# Full stack application available upon request
+# ~~
 # Developed by Kamran Choudhry
 
 import cv2, sys, os
@@ -38,7 +40,7 @@ while getPixels:
 	if cv2.waitKey(1) & 0xFF == 27:
 		camera.release()
 		getPixels = False
-	# every 10th frame is saved into the images folder
+	# public edition: every 10th frame is saved into the images folder
 	else:
 		if i % 10 == 0:
 			z = int(i/10)
