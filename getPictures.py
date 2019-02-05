@@ -1,5 +1,8 @@
-#Backend script that downloads 'images' and 'image links' based on multiple search queries
+#Backend script that downloads 'images' and 'image links' using Google Images
+#Full stack application available upon request
+# ~~
 #Compiles with python 2.7 and the std libraries
+#Developer: Kamran Choudhry
 
 import time
 import sys
