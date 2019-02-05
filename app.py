@@ -43,49 +43,49 @@ def is_logged_in(f):
 @app.route('/dashboard')
 @is_logged_in
 def dashboard():
-	cur = mysql.connection.cursor()																	# create db cursor
-	result = cur.execute("SELECT * FROM articles WHERE author = %s", [session['username']])			# get articles
+	cur = mysql.connection.cursor()		
+	result = cur.execute("SELECT * FROM articles WHERE author = %s", [session['username']])
 	articles = cur.fetchall()
-	if result > 0: 																		# if there are any rows
-		return render_template('dashboard.html', articles=articles)						# send data through to dashboard page		
+	if result > 0: 							
+		return render_template('dashboard.html', articles=articles)	
 	else:
-		msg_red = "~ EMPTY DASHBOARD ~"													# there aren't any rows
-		return render_template('dashboard.html', msg_red=msg_red)						# send error signal to dashboard page
-	cur.close()																			# close db cursor
+		msg_red = "~ EMPTY DASHBOARD ~"								
+		return render_template('dashboard.html', msg_red=msg_red)				
+	cur.close()														
  
 # about
 @app.route('/about')
 def about():
-	return render_template('about.html')												# load about website page
+	return render_template('about.html')						
 
 # articles
 @app.route('/repository')								
 @is_logged_in
 def articles():
-	cur = mysql.connection.cursor()														# create db cursor
-	result = cur.execute("SELECT * FROM articles")										# get articles
+	cur = mysql.connection.cursor()						
+	result = cur.execute("SELECT * FROM articles")					
 	articles = cur.fetchall()
-	if result > 0: 																		# if there are any rows
+	if result > 0: 							
 		return render_template('articles.html', articles=articles)
 	else:
 		msg_red = "~ EMPTY REPOSITORY ~"								
 		return render_template('articles.html', msg_red=msg_red)						# WLOG
-	cur.close()																			# close db cursor
+	cur.close()																			
 
 # inside each article
 @app.route('/repository/<string:id>')
 @is_logged_in
 def article(id):
-	cur = mysql.connection.cursor()														# create db cursor
+	cur = mysql.connection.cursor()														
 	result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
 	article = cur.fetchone()
-	cur.close()																			# close connection
-	return render_template("article.html", article=article)								# load database page
+	cur.close()																			
+	return render_template("article.html", article=article)								
 
 # register form class
-class RegisterForm(Form):																# lovely in python
+class RegisterForm(Form):											
 	name = StringField('Name', [validators.Length(min=1, max=50)])						
-	username = StringField('Username', [validators.Length(min=4, max=25)])				# following code reads like english
+	username = StringField('Username', [validators.Length(min=4, max=25)])
 	email = StringField('Email', [validators.Length(min=6, max=50)])
 	password = PasswordField('Password', [
 		validators.DataRequired(),
@@ -115,22 +115,22 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if request.method == 'POST':
-		username = request.form['username']												# get form fields
+		username = request.form['username']												
 		password_entered = request.form['password']
-		cur = mysql.connection.cursor()													# create a cursor 
-		result = cur.execute("SELECT * FROM users WHERE username = %s", [username])		# get username in db
-		if result > 0: 																	# if there are any rows:
-			data = cur.fetchone()														# get stored hash / dictionary configuration
+		cur = mysql.connection.cursor()													 
+		result = cur.execute("SELECT * FROM users WHERE username = %s", [username])		
+		if result > 0: 																	
+			data = cur.fetchone()									
 			password_db = data['password']
-			if sha256_crypt.verify(password_entered, password_db):						# compare hashed passwords
-				session["logged_in"] = True												# passed code block
+			if sha256_crypt.verify(password_entered, password_db):					
+				session["logged_in"] = True												
 				session["username"] = username
 				flash("~ GRANTED ACCESS ~", "success")
 				return redirect(url_for('dashboard'))
-			else:																		# not passed code block
+			else:																		
 				error = "~ PASSWORD INCORRECT ~"
 				return render_template('login.html', error=error)
-			cur.close()																	# close connection 
+			cur.close()																	
 		else:
 			error = "~ USERNAME INVALID ~"
 			return render_template('login.html', error=error)
