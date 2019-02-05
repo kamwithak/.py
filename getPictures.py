@@ -12,7 +12,7 @@ import os
 ####~~~~~~~
 
 #This list is used to search keywords.
-#You can edit this following list to make multiple google image queries. (keep to one element for simplicity)
+#You can edit this following list to make multiple image queries. (keep to one element for simplicity)
 search_keyword = ['breaded cats']
 
 #This list is used to further add suffix to your search term -> addition to search_keyword.
