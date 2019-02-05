@@ -1,5 +1,5 @@
-# backend script that downloads 'images' and 'image links' based on multiple search queries
-# compiles with python 2.7
+#Backend script that downloads 'images' and 'image links' based on multiple search queries
+#Compiles with python 2.7 and the std libraries
 
 import time
 import sys
@@ -9,11 +9,11 @@ import os
 ####~~~~~~~
 
 #This list is used to search keywords.
-#You can edit this list to search for google images of your choice. (keep to one element for simplicity)
+#You can edit this following list to make multiple google image queries. (keep to one element for simplicity)
 search_keyword = ['breaded cats']
 
 #This list is used to further add suffix to your search term -> addition to search_keyword.
-#Each element of the list will help you download 100 images. 
+#Each element in this following list will help you download +100 'extra' images 
 keywords = ['high resolution']
 
 ####~~~~~~~~
