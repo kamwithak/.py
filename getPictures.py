@@ -111,7 +111,7 @@ if __name__ == '__main__':
         info.write(str(i) + ': ' + str(search_keyword[i-1]) + ": " + str(items) + "\n\n\n")
         info.close()
 
-    t1 = time.time()     #stop the timer
+    t1 = time.time()     #Stop the timer
     total_time = t1-t0   #Calculating the total time required to crawl.
     print "Total time taken: "+str(total_time)+" Seconds"
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
