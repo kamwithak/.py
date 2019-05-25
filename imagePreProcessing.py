@@ -1,8 +1,5 @@
-# Facial recognition webcam-capturing application using face/eye cascade classifiers 
-# OpenCV and Python3 
-# Full stack application available upon request
-# ~~
-# Developed by Kamran Choudhry
+#Facial recognition webcam-capturing application using face/eye cascade classifiers 
+#OpenCV and Python3 testing
 
 import cv2, sys, os
 if not os.path.exists('images/'):
