@@ -1,3 +1,9 @@
+# Backend script that downloads 'images' and 'image links' using Google Images
+# Full stack application available upon request
+# ~~
+# Compiles with Py 3 (std)
+# Respoken by Kamran Choudhry
+
 import geocoder
 import requests
 import unicodecsv as csv
@@ -6,13 +12,13 @@ import time
 container = {}
 g = geocoder.ip('me')           # current location using local ip
 
-# hardcoded box
+# hardcoded coordinates for the GTA
 LongitudeMin = 43.484288
 LongitudeMax = 43.697341
 LatitudeMin = -79.825757
 LatitudeMax = -79.539214
 
-url = "https://www.realtor.ca/api/Listing.svc/PropertySearch_Post"
+url = "https://www.realtor.ca/api/Listing.svc/PropertySearch_Post"              # API Deprecated
 
 PropertySearchType = {
     1: "Residential",
