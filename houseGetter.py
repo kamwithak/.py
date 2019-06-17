@@ -1,7 +1,7 @@
-# Backend script that downloads 'images' and 'image links' using Google Images
+# Housing information retrieval system of registered MLS Listings in the GTA
 # Full stack application available upon request
 # ~~
-# Compiles with Py 3 (std)
+# Run with Python3
 # Respoken by Kamran Choudhry
 
 import geocoder
