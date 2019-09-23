@@ -1,12 +1,6 @@
 #include <iostream>
 #include <random>
-/**
- *      Intro to C++ ~ Professor Chad Zammar
- *      Assignment #2 ~ COMP 322
- *      Kamran Choudhry - 260733139
- *
- *      Enjoy! :-)
- * */
+
 using namespace std;
 
 struct ticket {                             // Node class equivalent, more or less
