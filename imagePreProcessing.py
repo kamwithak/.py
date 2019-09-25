@@ -1,5 +1,5 @@
-#Facial recognition webcam-capturing application using face/eye cascade classifiers 
-#OpenCV and Python3 testing
+# Facial recognition webcam-capturing application using face/eye cascade classifiers 
+# OpenCV and Python3 testing
 
 import cv2, sys, os
 if not os.path.exists('images/'):
