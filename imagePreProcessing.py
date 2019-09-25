@@ -1,4 +1,4 @@
-# Facial recognition webcam-capturing application using face/eye cascade classifiers 
+# Facial recognition webcam-capturing script using face/eye cascade classifiers 
 # OpenCV and Python3 testing
 
 import cv2, sys, os
