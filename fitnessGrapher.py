@@ -1,3 +1,9 @@
+# Fitness Understanding Tool V1 - 6 months of data
+# Daily steps, heart rate, distance travelled, and caloric output were some the metrics explored
+# Full stack application available upon request (Fitbit JSON Requests)
+# ~~
+# Developer: Kamran Choudhry
+
 #!/usr/bin/python
 import dash
 import dash_table
