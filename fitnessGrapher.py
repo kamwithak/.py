@@ -1,6 +1,7 @@
-# Fitness Understanding Tool V1 - 6 months of data
+# Fitness Understanding Tool V1
+# Currently delpoyed @ https://health-grapher.herokuapp.com/
 # Daily steps, heart rate, distance travelled, and caloric output were some the metrics explored
-# Full stack application available upon request (Fitbit JSON Requests)
+# Full stack source code available upon request (Fitbit JSON Requests)
 # ~~
 # Developer: Kamran Choudhry
 
