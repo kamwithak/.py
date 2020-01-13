@@ -2,7 +2,7 @@
 # Currently deployed @ https://health-grapher.herokuapp.com/ (Please wait ~ 30 seconds to load)
 # Daily steps, heart rate, distance travelled, and caloric output were some the metrics explored
 # Full stack application available upon request (Fitbit JSON Requests)
-# ~~
+# ~~~
 # Developer: Kamran Choudhry
 
 import dash
