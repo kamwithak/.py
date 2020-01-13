@@ -1,5 +1,7 @@
 # ☆ py snippets ☆ #
 
+Interfacing with the official FitBit Web API to extract & visualize personalized smartwatch data : *fitnessGrapher.py*
+
 Flask-based backend for a user-registration/database system using MySQL & Bootstrap : *app.py*
 
 Internet crawler that downloads images and image URL's based on query : *getPictures.py*
