@@ -1,8 +1,8 @@
-#Backend script that downloads 'images' and 'image links' using Google Images
-#Full stack application available upon request
+# Backend script that locally downloads Images and Image URL's using Google Images
+# Full stack application available upon request
 # ~~
-#Runs with Py 2.7 (standard)
-#Developer: Kamran Choudhry
+# Runs with Py 2.7 (standard)
+# Developer: Kamran Choudhry
 
 import time
 import sys
