@@ -12,7 +12,7 @@ def _iff_(i, j):
 	return (_and_(_or_(_not_(i), j),_or_(i, _not_(j))))
 
 def WhatIsTheNameOfMyComputer():
-	return None
+	pass
 
 import sys
 
