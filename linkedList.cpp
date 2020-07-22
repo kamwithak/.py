@@ -100,9 +100,9 @@ class SuperDraw {                           // LinkedList class representation
             unsigned int temp = 0;
             for (int i = 0 ; i < numbersLength ; i++) {                   // bubbleSort()
                 for (int j = 0 ; j < numbersLength - i - 1; j++) {
-                    if (aTicket->numbers[j] > aTicket->numbers[j + 1]) {  // linear time, worst-case n^2
+                    if (aTicket->numbers[j] > aTicket->numbers[j + 1]) {  // quadratic time, worst-case n^2
                         temp = aTicket->numbers[j + 1];
-                        aTicket->numbers[j + 1] = aTicket->numbers[j];    // swap code, self-evident
+                        aTicket->numbers[j + 1] = aTicket->numbers[j];    // swap code
                         aTicket->numbers[j] = temp;
                     }
                 }
@@ -153,7 +153,7 @@ class SuperDraw {                           // LinkedList class representation
             cout << "We found " + to_string(getSize()) + " generated tickets:" << endl;
             ticket* p = new ticket;
             p->next = ticketListHead;
-            while (p->next != NULL) {                           // O(n)
+            while (p->next != NULL) {
                 for (int l = 0; l < numbersLength; l++) {
                     cout << p->next->numbers[l];                // output value at lth index
                     if (l == numbersLength - 1) {               // end of tickets array -> endline and break;
