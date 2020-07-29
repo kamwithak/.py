@@ -1,5 +1,7 @@
 # ☆ py snippets ☆ #
 
+Just a few things...
+
 * Interfacing with the official FitBit Web API to extract & visualize personalized smartwatch data : *fitnessGrapher.py*
 
 * Flask-based backend for a user-registration/database system using MySQL & Bootstrap : *app.py*
@@ -18,3 +20,4 @@
 
 * Simulation of stars and nightsky : *star_test.py*
 
+~
