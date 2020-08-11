@@ -1,7 +1,6 @@
 # Flask-based backend for an encrypted user-registration/database web platform that manages project repositories
 # Full stack application available upon request
 # Database Technologies: SHA256 for data encryption and MySQL for server-side storing
-# Developer: Kamran Choudhry
 
 from flask import Flask, session, render_template, flash, redirect, url_for, session, logging, request
 from flask_mysqldb import MySQL
