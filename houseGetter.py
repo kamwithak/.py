@@ -1,6 +1,6 @@
 # Housing information retrieval system of registered MLS Listings in the GTA
 # Full stack application available upon request
-# ~~
+# ~~~
 # Run with Python3
 # Respoken by Kamran Choudhry
 
