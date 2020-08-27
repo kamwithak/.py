@@ -251,7 +251,6 @@ def game_loop():
 	sys.exit()
 
 if __name__ == "__main__":
-
 	game_loop()
 	
 	
