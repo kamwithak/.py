@@ -1,7 +1,7 @@
 # Fitness Understanding Tool - V1
 # Currently deployed @ https://health-grapher.herokuapp.com/ (Please wait ~ 5 seconds to load)
 # Daily steps, heart rate, distance travelled, and caloric output were some of the metrics explored
-# Full stack application available upon request (including Fitbit JSON Requests)
+# Full stack application available upon request!
 # ~~~
 # Developer: Kamran Choudhry
 
