@@ -1,11 +1,8 @@
 """
-For Q2) Part 3)
 
 An online implementation of Open AI's Gym can be found in this GitHub repo:
 - https://gist.github.com/HenryJia/23db12d61546054aa43f8dc587d9dc2c
 
-This is a stand-alone simulation, different from cartpole_control.py
-I've adjusted the Target State and PID parameters to reflect my work in cartpole_control.py
 Target State: [0, 0, 0, np.pi]
 
 """
