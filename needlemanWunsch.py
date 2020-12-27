@@ -1,5 +1,4 @@
 """
-Q3)
 Sequence alignment algorithm: Needleman-Wunsch
 Time complexity: O(len(x)*len(y)) where x and y are the input sequences
 """
