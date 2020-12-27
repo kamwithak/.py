@@ -1,10 +1,8 @@
 """
-
 An online implementation of Open AI's Gym can be found in this GitHub repo:
 - https://gist.github.com/HenryJia/23db12d61546054aa43f8dc587d9dc2c
 
 Target State: [0, 0, 0, np.pi]
-
 """
 
 import numpy as np
