@@ -2,7 +2,6 @@
 # Full stack application available upon request
 # ~~~
 # Run with Python3
-# Respoken by Kamran Choudhry
 
 import geocoder
 import requests
